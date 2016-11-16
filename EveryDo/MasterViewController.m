@@ -57,7 +57,7 @@
 
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
 {
-    //
+
 }
 
 - (void)changeToCreateView: (id)sender {
@@ -66,7 +66,6 @@
     }
     [self performSegueWithIdentifier:@"CreateNewToDo" sender:self];
 }
-
 
 #pragma mark - Segues
 
@@ -78,10 +77,6 @@
         [controller setDetailItem:object];
         controller.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
         controller.navigationItem.leftItemsSupplementBackButton = YES;
-    }
-    else if ([[segue identifier] isEqualToString:@"CreateNewToDo"])
-    {
-        //[segue destinationViewController];
     }
 }
 
@@ -117,12 +112,10 @@
     return cell;
 }
 
-
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
@@ -132,6 +125,5 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
-
 
 @end
